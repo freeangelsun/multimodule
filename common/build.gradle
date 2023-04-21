@@ -9,6 +9,11 @@ repositories {
     mavenCentral()
 }
 
+// bootjar로 패키징 할 필요가 없으므로 추가
+bootJar.enabled = false
+// jar 파일은 생성한다.
+jar.enabled = true
+
 dependencies {
 
 }
