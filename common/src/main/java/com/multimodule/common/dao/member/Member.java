@@ -2,8 +2,9 @@ package com.multimodule.common.dao.member;
 
 import lombok.Data;
 
+
 @Data
-class CMember {
+public class Member {
     private Long id;
     private String name;
 }
