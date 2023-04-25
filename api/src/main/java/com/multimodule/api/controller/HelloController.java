@@ -24,10 +24,18 @@ public class HelloController {
                                                     BindingResult bindingResult,
                                                     @RequestHeader  Map<String, String> requestHeader){
 
+
         MemberDto.MemberResponse  result = new MemberDto.MemberResponse("정찬길", "10");
         result.setReqId(request.getReqId());
-        result.setRspCode("00");
-        result.setRspMessage("성공메시지");
+
+        if (bindingResult.hasErrors()) {
+            result.setRspCode("01");
+            result.setRspMessage("에러메시지");
+        }
+        else {
+            result.setRspCode("00");
+            result.setRspMessage("성공메시지");
+        }
         return ResponseEntity.ok().headers(request.getReqIdHeader()).body(result);
     }
 }
