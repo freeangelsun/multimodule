@@ -1,6 +1,46 @@
 logging:
-  config: classpath:logback/logback-test.xml
+  config: classpath:logback/logback-local.xml
 
 server:
   port: 8081
+
+spring:
+  db: #db1 이든 db2 이든 상관없다. java class 의 prefix 의 값과 맞춰주면 된다.
+    datasource:
+      hikari:
+        jdbc-url: jdbc:mariadb://127.0.0.1:3306/studyDB
+        username: test
+        password: test
+        driverClassName: org.mariadb.jdbc.Driver
+        maximum-pool-size: 10
+        #minimum-idle: 100
+        max-lifetime: 1800000 #1800000
+        connection-timeout: 30000 #30000
+        validation-timeout: 5000
+        #connection-test-query: SELECT 1
+        data-source-properties:
+          cachePrepStmts: true
+          prepStmtCacheSize: 250
+          prepStmtCacheSqlLimit: 2048
+          useServerPrepStmts: true
+
+# 자바 컨피그 전환으로 주석처리
+#  datasource:
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://127.0.0.1:3306/studyDB
+#    username: test
+#    password: test
+
+#mybatis:
+#  configuration:
+#    multiple-result-sets-enabled: false
+#    map-underscore-to-camel-case: true
+#    call-setters-on-nulls: true
+#    jdbc-type-for-null: varchar
+#    default-fetch-size: 500
+#  mapper-locations:
+#    - classpath:mybatis/mapper/**/**.xml
+
+
+
 

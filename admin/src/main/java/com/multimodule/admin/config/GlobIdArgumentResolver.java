@@ -1,4 +1,4 @@
-package com.multimodule.api.config;
+package com.multimodule.admin.config;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,11 +17,10 @@ import java.lang.annotation.Annotation;
 public class GlobIdArgumentResolver implements HandlerMethodArgumentResolver {
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
-       /*
         for(Annotation ann : parameter.getParameterAnnotations() ){
             log.debug("Annotation : "+ann);
+            System.out.println(ann);
         }
-        */
         return true;
     }
 
