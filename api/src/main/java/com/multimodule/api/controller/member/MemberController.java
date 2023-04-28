@@ -3,7 +3,6 @@ package com.multimodule.api.controller.member;
 import com.multimodule.api.annotation.GlobId;
 import com.multimodule.api.dto.member.MemberDto;
 import com.multimodule.api.service.member.MemberService;
-import com.multimodule.api.vo.member.Member;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +10,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -21,8 +19,7 @@ public class MemberController {
     private MemberService memberService;
 
     @PostMapping(value = "/{version}/memberList")
-    public ResponseEntity<MemberDto.MemberResponse> getMember(@GlobId String globId,
-                                                              @PathVariable("version") String version,
+    public ResponseEntity<MemberDto.MemberResponse> getMember(@PathVariable("version") String version,
                                                               @Validated @RequestBody MemberDto.MemberRequest request,
                                                               BindingResult bindingResult,
                                                               @RequestHeader  Map<String, String> requestHeader){
@@ -54,7 +51,7 @@ public class MemberController {
 
         MemberDto.MemberDBResponse result = memberService.getMemberList();
         result.setReqId(request.getReqId());
-        log.debug("debug : #####################################################################################################");
+        log.debug("debug :"+globId+" : #####################################################################################################");
 
         if (bindingResult.hasErrors()) {
             result.setRspCode("01");
