@@ -12,9 +12,11 @@ public class MemberService {
     @Autowired
     private MemberMapper memberMapper;
 
-    public MemberDto.MemberDBResponse getMemberList(){
-        MemberDto.MemberDBResponse result = new MemberDto.MemberDBResponse(memberMapper.getListMember());
+    public MemberDto.MemberListResponse getMemberList(){
+        MemberDto.MemberListResponse result = new MemberDto.MemberListResponse(memberMapper.getMemberList());
         return result;
     }
+
+
 
 }

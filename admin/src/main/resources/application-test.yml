@@ -1,9 +1,6 @@
 logging:
   config: classpath:logback/logback-local.xml
 
-server:
-  port: 8080
-
 spring:
   db: #db1 이든 db2 이든 상관없다. java class 의 prefix 의 값과 맞춰주면 된다.
     datasource:
@@ -23,29 +20,4 @@ spring:
           prepStmtCacheSize: 250
           prepStmtCacheSqlLimit: 2048
           useServerPrepStmts: true
-
-  #스프링 ehcache 설정파일
-  cache:
-    jcache:
-      config: classpath:ehcache.xml
-
-# 자바 컨피그 전환으로 주석처리
-#  datasource:
-#    driver-class-name: org.mariadb.jdbc.Driver
-#    url: jdbc:mariadb://127.0.0.1:3306/studyDB
-#    username: test
-#    password: test
-
-#mybatis:
-#  configuration:
-#    multiple-result-sets-enabled: false
-#    map-underscore-to-camel-case: true
-#    call-setters-on-nulls: true
-#    jdbc-type-for-null: varchar
-#    default-fetch-size: 500
-#  mapper-locations:
-#    - classpath:mybatis/mapper/**/**.xml
-
-
-
 

@@ -18,9 +18,8 @@ public class MemberDto {
     @Data
     public static class MemberRequest extends Request {
         @NotEmpty(message = "member_id는 필수 입니다.")
-        @JsonProperty("member_id")
-        private String memberId;
-
+        @JsonProperty("id")
+        private String id;
     }
 
 
@@ -29,27 +28,36 @@ public class MemberDto {
     @Data
     public static class MemberResponse extends Response {
 
-        @JsonProperty("member_name")
-        public String name;
+        @JsonProperty("id")
+        private String id;
 
-        @JsonProperty("member_age")
-        public String age;
+        @JsonProperty("name")
+        private String name;
 
-        public MemberResponse (String name, String age)
-        {
-            this.name = name;
-            this.age = age;
-        }
+        @JsonProperty("age")
+        private String age;
+
+        @JsonProperty("email")
+        private String email;
+
+        @JsonProperty("phone")
+        private String phone;
+
+        @JsonProperty("address")
+        private String address;
+
+        @JsonProperty("date")
+        private String date;
     }
 
     @EqualsAndHashCode(callSuper = true)
     @NoArgsConstructor
     @Data
-    public static class MemberDBResponse extends Response {
+    public static class MemberListResponse extends Response {
 
         private int size;
         private List<Object> memberList;
-        public MemberDBResponse(List<Member> members)
+        public MemberListResponse(List<Member> members)
         {
             this.size = members.size();
             this.memberList = new ArrayList();

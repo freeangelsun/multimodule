@@ -2,9 +2,9 @@
 <!-- 60초마다 설정 파일의 변경을 확인 하여 변경시 갱신 -->
 <configuration scan="true" scanPeriod="60 seconds">
     <!-- log file path ${log.config.api.path} -->
-    <property name="LOG_PATH" value="/logs/api"/>
+    <property name="LOG_PATH" value="/logs/admin"/>
     <!-- log file name ${log.config.api.filename}-->
-    <property name="LOG_FILE_NAME" value="api"/>
+    <property name="LOG_FILE_NAME" value="admin"/>
     <!-- err log file name -->
     <property name="ERR_LOG_FILE_NAME" value="err_log"/>
     <!-- pattern -->
@@ -74,7 +74,7 @@
     </root>
 
     <!-- 특정패키지 로깅레벨 설정 -->
-    <logger name="com.multimodule" level="DEBUG" additivity="false">
+    <logger name="org.apache.ibatis" level="DEBUG" additivity="false">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
         <appender-ref ref="Error"/>
@@ -82,4 +82,5 @@
 
     <logger name="jdbc.sqltiming" level="DEBUG" additivity="false"/>
     <logger name="jdbc.resultsettable" level="DEBUG" additivity="false"/>
+
 </configuration>

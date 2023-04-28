@@ -21,5 +21,3 @@ spring:
           prepStmtCacheSqlLimit: 2048
           useServerPrepStmts: true
 
-
-

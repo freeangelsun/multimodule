@@ -2,7 +2,7 @@ logging:
   config: classpath:logback/logback-local.xml
 
 server:
-  port: 8080
+  port: 8081
 
 spring:
   db: #db1 이든 db2 이든 상관없다. java class 의 prefix 의 값과 맞춰주면 된다.

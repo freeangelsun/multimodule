@@ -9,5 +9,7 @@ import java.util.List;
 
 @Repository(value = "memberMapper") @Primary
 public interface MemberMapper{
-    List<Member> getListMember();
+    List<Member> getMemberList();
+    Member getMember(String id);
 }
+
