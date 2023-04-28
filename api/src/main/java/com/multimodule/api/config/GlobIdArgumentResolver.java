@@ -18,8 +18,8 @@ public class GlobIdArgumentResolver implements HandlerMethodArgumentResolver {
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
         for(Annotation ann : parameter.getParameterAnnotations() ){
+            log.debug("Annotation : "+ann);
             System.out.println(ann);
-
         }
         return true;
     }
