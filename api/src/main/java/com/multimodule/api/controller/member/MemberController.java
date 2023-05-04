@@ -5,6 +5,8 @@ import com.multimodule.api.dto.member.MemberDto;
 import com.multimodule.api.service.member.MemberCacheService;
 import com.multimodule.api.service.member.MemberService;
 import com.multimodule.api.vo.member.Member;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,12 +14,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 
 @Slf4j
 @RestController
+@Tag(name = "회원", description = "회원 조회 관련 api 입니다.")
 public class MemberController {
     @Autowired
     private MemberService memberService;
@@ -26,7 +28,9 @@ public class MemberController {
     private MemberCacheService memberCacheService;
 
 
+
     @PostMapping(value = "/{version}/memberList")
+    @Operation(summary = "회원 리스트", description = "모든 회원 리스트를 조회합니다.")
     public ResponseEntity<MemberDto.MemberListResponse> getMemberList(@GlobId String globId,
                                                                     @PathVariable("version") String version,
                                                                     @Validated @RequestBody MemberDto.MemberRequest request,
