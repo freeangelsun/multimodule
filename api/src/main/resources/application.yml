@@ -29,6 +29,7 @@ spring:
     jcache:
       config: classpath:ehcache.xml
 
+# swagger 설정
 springdoc:
   packages-to-scan: com.multimodule.api.controller
   default-consumes-media-type: application/json;charset=UTF-8
@@ -43,6 +44,27 @@ springdoc:
       enabled: true
   cache:
     disabled: true
+
+# spring-boot actuator 설정 localhost:8080/actuator/health
+management:
+  endpoint:
+    health:
+      show-details: always
+  info:
+    java:
+      enabled: true
+    env:
+      enabled: true
+    build:
+      enabled: true
+
+    endpoints:
+      web:
+        exposure:
+          include: info, health # actuator/{endpoint} 열어둘 정보 지정
+info:
+  hello: world
+
 # 자바 컨피그 전환으로 주석처리
 #  datasource:
 #    driver-class-name: org.mariadb.jdbc.Driver

@@ -33,12 +33,18 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-aop'
 
     // webflux
-    //implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
     // swagger
     implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
     //implementation 'io.springfox:springfox-boot-starter:3.0.0'
     //implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+}
+
+// actuator
+// 빌드 시 build/resources/main/META-INF/build-info.properties 파일이 생성되고 빌드 정보가 담기도록 하는 설정입니다.
+springBoot {
+    buildInfo()
 }
 
 test {
