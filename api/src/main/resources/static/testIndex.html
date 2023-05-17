@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>스프링부트 index.html</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- @Controller와, @ResponseBody 어노테이션으로 데이터 View 구현 -->
+        <script>
+            $.ajax({
+                type: "GET",
+                url: "/testData",
+                success: (data) => {
+                    console.log(data);
+                    $('#sample1').html(data);
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <h1>스프링부트 첫 화면 입니다.</h1>
+        <p> 이 페이지는 인덱스 페이지 입니다. </p> </ br>
+        <p> 스프링부트는 resources/static 폴더를 기본으로 인식합니다. </p> </ br>
+        <div id="sample1"> </div>
+    </body>
+</html>
