@@ -61,7 +61,7 @@ public class TestServiceAspect
      * @param joinPoint
      * @return
      * @throws Throwable
-     */
+
     @Around("execution(* com.multimodule.api.service..*(..))")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         log.debug("Around before: {}", joinPoint.getSignature().getName());
@@ -69,4 +69,5 @@ public class TestServiceAspect
         log.debug("Around after: {}", joinPoint.getSignature().getName());
         return result;
     }
+     */
 }
