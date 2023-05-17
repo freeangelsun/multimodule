@@ -27,7 +27,11 @@ spring:
   thymeleaf:
     prefix: classpath:/static/
 
-  #스프링 ehcache 설정파일
+  # 정적 리소스에 변화가 있을 때 바로 반영한다.
+  devtools:
+    livereload:
+      enabled: true
+
   cache:
     jcache:
       config: classpath:ehcache.xml
