@@ -22,8 +22,8 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/docs/**").addResourceLocations("classpath:/static/docs")
-                .setCachePeriod(20);
+        registry.addResourceHandler("/docs/**").addResourceLocations("classpath:/static/docs").setCachePeriod(20);
+        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/").setCachePeriod(20);
         //super.addResourceHandlers(registry);
     }
 }
