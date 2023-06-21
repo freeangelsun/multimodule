@@ -24,6 +24,9 @@ spring:
           prepStmtCacheSqlLimit: 2048
           useServerPrepStmts: true
 
+  thymeleaf:
+    prefix: classpath:/static/vue
+
   #스프링 ehcache 설정파일
   cache:
     jcache:

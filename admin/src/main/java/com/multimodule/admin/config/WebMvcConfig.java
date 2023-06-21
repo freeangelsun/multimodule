@@ -23,7 +23,9 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/docs/**").addResourceLocations("classpath:/static/docs").setCachePeriod(20);
-        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/").setCachePeriod(20);
-        //super.addResourceHandlers(registry);
+        // vue/static/js/manifest.320b3692f8404593f921.js> 호출 검색 locations
+        registry.addResourceHandler("/vue/static/**").addResourceLocations("classpath:/static/vue/static/").setCachePeriod(20);
+        super.addResourceHandlers(registry);
     }
+
 }
